@@ -38,3 +38,21 @@ function uniqueArray() {
 uniqueArray();
 
 /////////////////////////////////////////////////////////////////////////////////
+
+function replaceInArray() {
+    let arr = [];
+    arr.length = 10;
+    let item;
+    for (let i = 0; i < arr.length; i++) {
+        item = Math.floor(Math.random() * 101);
+        if (!arr.includes(item)) {
+            arr[i] = item;
+        } else i--;
+    }
+
+    arr = arr.join(', ').replace(/0/g, 'zero').split(', ');
+
+    console.log(arr);
+}
+
+replaceInArray();
