@@ -21,11 +21,14 @@ function generateFizzBuzz() {
             return arr2;
         }, []);
 
-        let html = '<p>Your list: </p><ul>';
+        document.getElementById('result').innerHTML = 'Your list:'
+        let ul = document.createElement('ul');
+        document.getElementById('result').appendChild(ul);
+
         for (let i = 0; i < n; i++) {
-            html += '<li>' + arr2[i] + '</li>';
+            let li = document.createElement('li');
+            li.textContent = arr2[i];
+            ul.appendChild(li);
         }
-        html += '</ul>';
-        document.getElementById('result').innerHTML = html;
     }
 }
